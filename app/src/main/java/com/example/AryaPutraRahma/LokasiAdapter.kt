@@ -34,11 +34,11 @@ class LokasiAdapter(private val letterId: String, context: Context) :
     private val filteredWords: List<String>
 
     init {
-        // Mengambil list array dari res/value/array
+        // Mengambil list array lokasi
         val words = context.resources.getStringArray(R.array.Lokasi).toList()
 
         filteredWords = words
-            // menampilkan data yang tersaing (yang terdapat kata itu dan menghirukan besar kecilnya)
+            // menampilkan data
             .filter { it.contains(letterId, ignoreCase = true) }
             // mengacak data
             .shuffled()
@@ -58,13 +58,12 @@ class LokasiAdapter(private val letterId: String, context: Context) :
             .from(parent.context)
             .inflate(R.layout.item_view, parent, false)
 
-        // mengtur aksesdelegasi mejadi Accessibility (text dapat terbaca)
         layout.accessibilityDelegate = Accessibility
 
         return WordViewHolder(layout)
     }
 
-    // mengganti isi konten
+    // isi konten
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
 
         // memangil data yang telah di filter

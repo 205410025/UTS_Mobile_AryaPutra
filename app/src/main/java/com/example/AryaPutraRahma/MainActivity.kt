@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // mengabil fragmet navigasi host
+        // mengabil fragment
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         // mengatur navController menggunkan navHostFragment
         navController = navHostFragment.navController
-        // mengarahkan actionbar ke navController
+        // mengarahkan action bar ke navController
         setupActionBarWithNavController(navController)
     }
     // mengatur tombol kembali

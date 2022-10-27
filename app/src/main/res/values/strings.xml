@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- mengatur isi tulisan pada layout/fragment yang akan ditampilkan -->
+<!-- mengatur isi tulisan pada layout/fragment pada aplikasi-->
 <resources>
     <string name="app_name">Magelangan</string>
     <string name="detail_prefix">Wisata</string>

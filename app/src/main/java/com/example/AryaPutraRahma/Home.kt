@@ -36,7 +36,6 @@ class Home : Fragment() {
             findNavController().navigate(R.id.action_Home_to_WisataListFragment)
         }
     }
-    // memperbarui objek terikat jika fragment hancur
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.AryaPutraRahma.databinding.FragmentLokasiListBinding
 
-// menampilkan RecyclerView dengan tombol pencarian
+// menampilkan RecyclerView
 class LokasiListFragment : Fragment() {
     // mengatur akses varible dan arah pencarian
     companion object {

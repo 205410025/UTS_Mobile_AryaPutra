@@ -12,9 +12,9 @@ import com.example.AryaPutraRahma.databinding.FragmentWisataListBinding
 class WisataListFragment : Fragment() {
     // menyiapkan variable binding
     private var _binding: FragmentWisataListBinding? = null
-    // mngeset variable binding
+    // mengatur variable binding
     private val binding get() = _binding!!
-    // mengatur layaoutmanager agar tetap menggunakan RecyclerView
+    // mengatur layout manager agar tetap menggunakan RecyclerView
     private lateinit var recyclerView: RecyclerView
     private var isLinearLayoutManager = true
 
@@ -37,7 +37,6 @@ class WisataListFragment : Fragment() {
         // mengatur linearlayoutmangaer sebagi yang pertama tampil
         chooseLayout()
     }
-    // memperbarui objek terikat jika fragment hancur
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -48,7 +47,7 @@ class WisataListFragment : Fragment() {
         val layoutButton = menu.findItem(R.id.action_switch_layout)
         setIcon(layoutButton)
     }
-    // mengatur layoutmanager untuk recyclerView berdasar list
+    // mengatur layout manager
     private fun chooseLayout() {
         when (isLinearLayoutManager) {
             true -> {
@@ -65,13 +64,12 @@ class WisataListFragment : Fragment() {
     private fun setIcon(menuItem: MenuItem?) {
         if (menuItem == null)
             return
-        // Mengatur icon untuk mengganti Layout Grid/Linear
+        // Mengatur icon
         menuItem.icon =
             if (isLinearLayoutManager)
                 ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_grid_layout)
             else ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_linear_layout)
     }
-    // mengatur cara menagani interaksi dengan menu trpilih
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {

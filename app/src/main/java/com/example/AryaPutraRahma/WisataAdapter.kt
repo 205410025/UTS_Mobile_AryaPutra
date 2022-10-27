@@ -37,7 +37,7 @@ class WisataAdapter(context: Context) :
         val button = view.findViewById<Button>(R.id.button_item)
     }
 
-    // Mneghitung total ukuran list array
+    // Menghitung total ukuran array
     override fun getItemCount(): Int {
         return list.size
     }
@@ -47,7 +47,6 @@ class WisataAdapter(context: Context) :
         val layout = LayoutInflater
                 .from(parent.context)
                 .inflate(R.layout.item_view, parent, false)
-        // Setup custom accessibility delegate to set the text read
         layout.accessibilityDelegate = Accessibility
         return LetterViewHolder(layout)
     }
@@ -58,7 +57,7 @@ class WisataAdapter(context: Context) :
         holder.button.text = item.toString()
         // menambahkan OnClickListener untuk tombol viewholder
         holder.button.setOnClickListener {
-            // menghubungkan Genrelist ke Moviellist
+            // menghubungkan Wisatalist ke Lokasilist
             val action = WisataListFragmentDirections.actionWisataListFragmentToLokasiListFragment(letter = holder.button.text.toString())
             holder.view.findNavController().navigate(action)
         }
