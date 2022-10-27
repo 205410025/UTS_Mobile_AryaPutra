@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/home2">
+    <!--  mengatur fragment letterList  -->
+    <fragment
+        android:id="@+id/letterListFragment"
+        android:name="com.example.AryaPutraRahma.WisataListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_wisata_list">
+        <action
+            android:id="@+id/action_WisataListFragment_to_LokasiListFragment"
+            app:destination="@id/wordListFragment" />
+    </fragment>
+    <!--  mengatur fragment WordList  -->
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.example.AryaPutraRahma.LokasiListFragment"
+        android:label="@string/word_list_fragment_label"
+        tools:layout="@layout/fragment_lokasi_list">
+        <argument
+            android:name="letter"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.AryaPutraRahma.Home"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_Home_to_WisataListFragment"
+            app:destination="@id/letterListFragment" />
+    </fragment>
+</navigation>
